@@ -88,6 +88,7 @@ return [
 
     'locales' => env('APP_LOCALES', 'ru,en'),
 
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -127,4 +128,8 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+
+
+    ///////////////
+    'template' => env('APP_TEMPLATE', 'default'),
 ];
