@@ -41,35 +41,35 @@ class MultiLanguageRoutesTest extends TestCase
         require base_path('routes/web.php');
     }
 
-    function testMultiLanguageDisabled200()
+    function testMultiLanguageDisabled_200()
     {
         $this->disableMultilanguage();
         $response = $this->get('/');
         $response->assertStatus(200);
     }
 
-    function testMultiLanguageDisabled404()
+    function testMultiLanguageDisabled_404()
     {
         $this->disableMultilanguage();
         $response = $this->get('/en');
         $response->assertStatus(404);
     }
 
-    function testMultiLanguageEnabled200()
+    function testMultiLanguageEnabled_200()
     {
         $this->enableMultilanguage();
         $response = $this->get('/ru');
         $response->assertStatus(200);
     }
 
-    function testMultiLanguageEnabled301()
+    function testMultiLanguageEnabled_301()
     {
         $this->enableMultilanguage();
         $response = $this->get('/');
         $response->assertStatus(301);
     }
 
-    function testMultiLanguageEnabled404()
+    function testMultiLanguageEnabled_404()
     {
         $this->enableMultilanguage();
         $response = $this->get('/lv');
